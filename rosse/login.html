@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rosse - Log In</title>
+    <link rel="stylesheet" href="loginStyle.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/2a65d45040.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function validateForm() {
+        var pass = document.getElementById("password").value;
+        console.log(pass);
+
+        var email = document.getElementById("email").value;
+        var atposition = email.indexOf("@");
+        var dotposition = email.lastIndexOf(".");
+        if (
+          pass.length < 8 ||
+          pass.length > 20 ||
+          pass.match(/[a-z]/) == null ||
+          pass.match(/[A-Z]/) == null ||
+          pass.match(/[0-9]/) == null ||
+          pass.match(/[@#$%^&+=!*]/) == null ||
+          email === "" ||
+          atposition < 1 ||
+          dotposition < atposition + 2 ||
+          dotposition + 2 >= email.length
+        ) {
+          if (email === "") {
+            document.getElementById("emailErr").innerHTML =
+              "**Please enter your email address";
+            return false;
+          }
+
+          if (
+            atposition < 1 ||
+            dotposition < atposition + 2 ||
+            dotposition + 2 >= email.length
+          ) {
+            alert("Please enter a valid email address");
+            document.getElementById("emailErr").innerHTML =
+              "**Please enter a valid email address";
+            return false;
+          }
+
+          if (
+            pass.length < 8 ||
+            pass.length > 20 ||
+            pass.match(/[a-z]/) == null ||
+            pass.match(/[A-Z]/) == null ||
+            pass.match(/[0-9]/) == null ||
+            pass.match(/[@#$%^&+=!*]/) == null
+          ) {
+            alert(
+              "Password length should be between 8 to 20 characters, \n Password should have atleast one uppercase, lowercase, numeric, special character"
+            );
+            if (pass.length < 8) {
+              console.log("too short");
+              document.getElementById("error").innerHTML =
+                "**Password is too short";
+              return false;
+            }
+            if (pass.length > 20) {
+              console.log("too long");
+              document.getElementById("error").innerHTML =
+                "**Password is too long";
+              return false;
+            }
+            if (pass.match(/[a-z]/) == null) {
+              document.getElementById("error").innerHTML =
+                "** pasword should have atleast one lowercase letter";
+              return false;
+            }
+            if (pass.match(/[A-Z]/) == null) {
+              document.getElementById("error").innerHTML =
+                "** pasword should have atleast one uppercase letter";
+              return false;
+            }
+            if (pass.match(/[0-9]/) == null) {
+              document.getElementById("error").innerHTML =
+                "** pasword should have atleast one numerical digit";
+              return false;
+            }
+            if (pass.match(/[@#$%^&+=!*]/) == null) {
+              document.getElementById("error").innerHTML =
+                "** pasword should have atleast one special character";
+              return false;
+            }
+          }
+        }
+
+        return true;
+      }
+
+      function myFunction() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-box">
+        <h1>Log In</h1>
+        <form onsubmit="return validateForm()" method="post">
+          <div class="input-group">
+            <div class="input-field">
+              <i class="fa-solid fa-envelope" style="color: #fbdbdb"></i>
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="someone@example.com"
+              />
+
+              <div class="emailError">
+                <span id="emailErr"></span>
+              </div>
+            </div>
+            <div class="input-field">
+              <i class="fa-solid fa-lock" style="color: #fbdbdb"></i>
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                placeholder="Password"
+              />
+              <div class="error">
+                <span id="error"></span>
+              </div>
+            </div>
+            <div class="showPass">
+              <input class="showP" type="checkbox" onclick="myFunction()" />Show
+              Password
+            </div>
+            <button type="submit">Log In</button>
+            <a href="signup.html" class="log-in"
+              >Not a Member Yet? <span class="red-text">Sign Up!</span></a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+/* Reset default browser styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a background color */
+body {
+  background-color: #f8f8f8;
+}
+
+/* Container to center the form and image */
+.container {
+  display: flex;
+  height: 100vh;
+  padding: 2rem;
+}
+
+/* Form container */
+.form-box {
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  align-self: center;
+  justify-self: center;
+  margin: 500px;
+  
+}
+
+/* Form heading */
+.form-box h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Input group to contain form elements */
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input field container */
+.input-field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Label for input field */
+.input-field label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+
+/* Input field */
+.input-field input {
+  border: none;
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+/* Submit button */
+button[type="submit"] {
+  background-color: #fdbdbd;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-weight: 400;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  transition:all 0.5s ease;
+  width: 100%;
+}
+
+/* Hover effect on submit button */
+button[type="submit"]:hover {
+  background-color: #e08f86;
+}
+a{
+  padding-top: 30px;
+  padding-bottom: 10px;
+color: black;
+text-decoration: none;
+text-align: center;
+}
+.red-text{
+  color: #fdbdbd;
+  text-shadow: 1px 1px 1px rgba(35, 27, 65, 0.5);
+}
+.container{
+
+  background: linear-gradient(to bottom, rgba(143, 99, 99, 0.5), rgba(255, 204, 204, 0.1)),url(img/bg.jpg);
+  z-index: -1;
+  background-position: center;
+  background-size: cover;
+  background-position: relative;
+}
+
+
+/* Icon styles */
+.fa-solid {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.showPass{
+  display:inline-flex;
+  
+}
+.error{
+  color: red;
+  font-size: 13px;
+  display: flexbox;
+
+}
+.emailError{
+  color: red;
+  font-size: 13px;
+  display: flexbox;
+}
