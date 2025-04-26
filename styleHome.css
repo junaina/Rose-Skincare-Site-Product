@@ -1,14 +1,59 @@
-body{
-  font-family: 'Montserrat', sans-serif;
-}
-.logo-container{
-  display: flex;
-  flex-wrap: wrap;
-}
-
-/* Reset default browser styles */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: #fff;
+}
+
+/* Nav styles */
+header {
+  background-color: #fff;
+  padding: 10px 30px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo styles */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Login/Signup buttons container */
+.loginSignup {
+  display: flex;
+  gap: 15px;
+}
+
+/* Styling individual buttons */
+.login-btn a,
+.signup-btn a {
+  text-decoration: none;
+}
+
+.login,
+.signup {
+  background-color: #e8b6ab;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effects */
+.login:hover,
+.signup:hover {
+  background-color: #d18a7b;
 }
